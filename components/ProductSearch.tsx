@@ -4,9 +4,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { PRODUCTS, getLocalizedCopy, type Product } from "@/lib/products";
 import { useT } from "@/lib/i18n";
+import clsx from "clsx";
 
 type ProductSearchProps = {
   locale: string;
+  className?: string;
 };
 
 const MAX_RESULTS = 6;
@@ -30,7 +32,7 @@ type SearchResult = {
   score: number;
 };
 
-export function ProductSearch({ locale }: ProductSearchProps) {
+export function ProductSearch({ locale, className }: ProductSearchProps) {
   const t = useT();
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -156,7 +158,7 @@ export function ProductSearch({ locale }: ProductSearchProps) {
   };
 
   return (
-    <div className="relative w-full max-w-xs" ref={containerRef}>
+    <div className={clsx("relative w-full", className)} ref={containerRef}>
       <input
         ref={inputRef}
         type="search"

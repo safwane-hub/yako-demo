@@ -12,8 +12,12 @@ export default function ProductPage({
   if (!product) return notFound();
 
   return (
-    <div className="grid md:grid-cols-2 gap-6">
-      <img src={product.image} alt={product.title} className="rounded-2xl w-full aspect-[5/3]" />
+    <div className="grid gap-6 md:grid-cols-2">
+      <img
+        src={product.image}
+        alt={product.title}
+        className="aspect-[5/3] w-full rounded-2xl object-cover"
+      />
       <div>
         <div className="text-sm opacity-60">{product.brand}</div>
         <h1 className="text-2xl font-semibold">{product.title}</h1>

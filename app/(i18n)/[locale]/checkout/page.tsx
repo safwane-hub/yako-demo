@@ -17,8 +17,8 @@ export default function Checkout({ params }: { params: { locale: string } }) {
     router.push(`/${params.locale}/checkout/return?status=success&orderId=${orderId}`);
   };
   return (
-    <div className="grid md:grid-cols-2 gap-6">
-      <div className="card p-4 space-y-3">
+    <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+      <div className="card space-y-3 p-4 sm:p-6">
         <div>
           <label className="text-sm">{t("checkout.fullName")}</label>
           <input className="input" value={name} onChange={(e) => setName(e.target.value)} />
@@ -28,7 +28,7 @@ export default function Checkout({ params }: { params: { locale: string } }) {
           <input className="input" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
       </div>
-      <div className="card p-4 space-y-2">
+      <div className="card space-y-2 p-4 sm:p-6">
         <div className="text-sm">
           {t("items")}: {items.length}
         </div>

@@ -62,7 +62,7 @@ export default async function RootLayout({
           <I18nProvider messages={messages}>
             <Header locale={locale as any} />
             <main className="container py-6">{children}</main>
-            <footer className="container py-10 text-sm opacity-70">
+            <footer className="container py-10 text-center text-sm opacity-70 sm:text-left">
               © {new Date().getFullYear()} YAKOGAME
             </footer>
           </I18nProvider>
